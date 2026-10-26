@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TOON PICK — 취향대로 찾는 웹툰</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">T</span> TOON<span>PICK</span></a>
+<nav><a class="active" href="#discover">웹툰 찾기</a><a href="#genres">장르 추천</a><a href="#saved">찜한 웹툰 <b id="savedCount">0</b></a></nav>
+<div class="top-actions"><a class="login-link" href="signup.html">로그인</a><a class="signup-mini" href="signup.html">회원가입 <span>↗</span></a></div>
+</header>
+<main>
+<section class="hero"><div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> YOUR NEXT FAVORITE WEBTOON</div>
+<h1>다음 정주행,<br><span>여기서 발견해.</span></h1><p>네이버 웹툰과 카카오웹툰을 한곳에서 탐색하고<br class="desktop"> 취향에 맞는 작품을 찾아보세요.</p>
+<div class="hero-actions"><a class="primary-btn" href="#discover">웹툰 둘러보기 <span>↓</span></a><button class="ghost-btn" id="heroQuiz">취향 테스트 <span>✳</span></button></div>
+<div class="hero-meta"><span>✦ 장르별 큐레이션</span><span>✦ 플랫폼 통합 탐색</span><span>✦ 취향 기반 추천</span></div></div>
+<div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+<div class="poster poster-back"><div class="poster-label">FANTASY</div><div class="poster-art art-purple">✧</div><div class="poster-title">다른 세계의<br>이야기</div></div>
+<div class="poster poster-front"><div class="poster-label">ROMANCE</div><div class="poster-art art-pink"><span>♥</span></div><div class="poster-title">우리의<br>첫 페이지</div></div>
+<div class="floating-note note-top">TODAY'S PICK <b>✦</b></div><div class="floating-note note-bottom"><span class="tiny-star">✦</span> YOUR TASTE, YOUR TOON</div></div></section>
+<section class="stats-strip"><div><strong id="totalCount">60+</strong><span>DEMO TITLES</span></div><i></i><div><strong>02</strong><span>PLATFORMS</span></div><i></i><div><strong>06</strong><span>GENRES</span></div></section>
+<section class="section" id="discover"><div class="section-heading"><div><div class="eyebrow muted">DISCOVER</div><h2>어떤 웹툰을 찾고 있어?</h2><p>검색하거나 플랫폼·장르 필터를 선택해 봐.</p></div>
+<div class="platform-switch"><button class="platform active" data-platform="all">전체</button><button class="platform" data-platform="naver">네이버 웹툰</button><button class="platform" data-platform="kakao">카카오웹툰</button></div></div>
+<div class="api-bar"><div><span class="api-dot"></span><span id="apiStatus">샘플 목록 표시 중 · API 연결을 시도할 수 있어요</span></div><button id="syncApi">API 데이터 불러오기 ↗</button></div>
+<div class="search-row"><label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="웹툰 제목, 작가 또는 장르 검색"><kbd>Ctrl K</kbd></label><select id="sortSelect" aria-label="정렬"><option value="featured">추천순</option><option value="title">제목순</option></select></div>
+<div class="genre-row" id="genres"><button class="genre-chip active" data-genre="all">✦ 전체 장르</button><button class="genre-chip" data-genre="액션">⚔ 액션</button><button class="genre-chip" data-genre="로맨스">♡ 로맨스</button><button class="genre-chip" data-genre="판타지">✧ 판타지</button><button class="genre-chip" data-genre="스릴러">◉ 스릴러</button><button class="genre-chip" data-genre="개그">☻ 개그</button><button class="genre-chip" data-genre="일상">☁ 일상</button></div>
+<div class="results-top"><span id="resultCount">웹툰 60개</span><span class="hint">표지를 선택하면 공식 플랫폼으로 이동해요 ↗</span></div>
+<div class="webtoon-grid" id="webtoonGrid"></div><div class="empty-state hidden" id="emptyState"><div>☹</div><h3>검색 결과가 없어요</h3><p>검색어 또는 장르를 바꿔서 다시 찾아보세요.</p><button class="primary-btn" id="resetFilters">필터 초기화</button></div></section>
+<section class="recommend-banner" id="saved"><div class="banner-icon">✦</div><div><div class="eyebrow">YOUR PERSONAL SHELF</div><h2>나중에 읽고 싶은 작품은 찜해두기.</h2><p>찜한 작품은 이 브라우저에 저장돼요.</p></div><button class="outline-btn" id="showSaved">찜한 웹툰 보기 <span>→</span></button></section>
+<section class="section mini-section"><div class="section-heading"><div><div class="eyebrow muted">HOW IT WORKS</div><h2>취향을 찾는 세 가지 방법</h2></div></div><div class="feature-grid"><article class="feature"><div class="feature-icon icon-blue">⌕</div><h3>빠른 탐색</h3><p>제목 검색과 플랫폼 필터로 원하는 작품을 찾아보세요.</p></article><article class="feature"><div class="feature-icon icon-pink">✦</div><h3>장르 큐레이션</h3><p>액션부터 힐링 일상까지, 기분에 맞는 장르를 골라보세요.</p></article><article class="feature"><div class="feature-icon icon-yellow">♡</div><h3>나만의 보관함</h3><p>마음에 드는 작품을 찜해두고 나중에 다시 확인하세요.</p></article></div></section>
+</main>
+<footer><div class="footer-main"><div><a class="brand" href="index.html"><span class="brand-mark">T</span> TOON<span>PICK</span></a><p>당신의 다음 이야기를 발견하는 곳.</p></div><div class="socials"><span>FOLLOW US</span><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">◎ <b>Instagram</b></a><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">f <b>Facebook</b></a><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">▶ <b>YouTube</b></a><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">♪ <b>TikTok</b></a></div></div><div class="footer-bottom"><span>© 2026 TOON PICK · WEBTOON DISCOVERY PROJECT</span><span>작품 감상은 네이버 웹툰·카카오웹툰 공식 페이지에서</span></div></footer>
+<div class="modal hidden" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle"><div class="modal-card"><button class="modal-close" id="closeQuiz" aria-label="닫기">×</button><div class="eyebrow">TASTE QUIZ · 01 / 01</div><h2 id="quizTitle">오늘은 어떤 이야기가 끌려?</h2><p>가장 보고 싶은 장르를 골라줘.</p><div class="quiz-options"><button data-quiz="액션">⚔ 몰입감 넘치는 액션</button><button data-quiz="로맨스">♡ 설레는 로맨스</button><button data-quiz="판타지">✧ 새로운 세계의 판타지</button><button data-quiz="스릴러">◉ 긴장감 있는 스릴러</button><button data-quiz="개그">☻ 가볍게 웃는 개그</button><button data-quiz="일상">☁ 편안한 일상</button></div><p class="modal-foot">선택한 장르에 맞춰 목록을 바로 필터링해요.</p></div></div>
+<script src="catalogue.js"></script><script src="app.js"></script>
+</body></html>
